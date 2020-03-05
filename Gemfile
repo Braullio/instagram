@@ -24,6 +24,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+# New wave Internationalization support for Ruby.
+gem 'i18n', '~> 0.7.0'
 
 
 group :development, :test do
