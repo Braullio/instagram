@@ -17,7 +17,7 @@
       <div class='container'>
         <nav>
           <div class='logo-icon'>
-            <%= link_to 'icon', root_path %>
+            <%= link_to embedded_svg('instagram-icon.svg'), root_path %>
           </div>
 
           <div class='logo-text'>
@@ -28,8 +28,8 @@
         </nav>
 
         <nav class='actions'>
-          <%= link_to  '+', new_post_path %>
-          <%= link_to  'user', "#" %>
+          <%= link_to  embedded_svg('plus.svg'), new_post_path %>
+          <%= link_to  embedded_svg('user.svg'), "#", data: { modal_id: 'user-actions' } %>
         </nav>
       </div>
     </header>
