@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show]
 
   def index
+    flash.now[:notice] = 'Tudo certo!!!!!'
+    flash.now[:alert]  = 'Alerta de erro!!!!!'
     @posts = Post.all
   end
 
