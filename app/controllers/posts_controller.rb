@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Posts for instagram
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show]
 
@@ -5,8 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @post = Post.new
