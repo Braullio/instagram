@@ -32,3 +32,4 @@ yarn-debug.log*
 
 Gemfile.lock
 /config/application.yml
+db/schema.rb
