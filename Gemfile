@@ -26,11 +26,18 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 # New wave Internationalization support for Ruby.
 gem 'rails-i18n', '~> 6.0'
-
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.7'
+# Translations for the devise gem
+gem 'devise-i18n', '~> 1.9'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
+gem 'letter_opener', '~> 1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -41,6 +48,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
