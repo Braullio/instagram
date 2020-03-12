@@ -1,22 +1,10 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+<%= form_with(model: post, local: true, class: 'new-post') do |form| %>
+  <h1>Novo post</h1>
+  <div class='field'>
+    <%= form.text_field :description, placeholder: 'Descrição' %>
   </div>
 
-  <div class="actions">
+  <div class='actions'>
     <%= form.submit %>
   </div>
 <% end %>
