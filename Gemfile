@@ -20,6 +20,9 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Use ActiveStorage variant
+gem 'image_processing', '~> 1.2'
+
 # ----------- New Gems ----------- #
 
 # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
@@ -48,3 +51,5 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem "active_storage_validations", "~> 0.8.7"
