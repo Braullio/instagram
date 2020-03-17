@@ -5,7 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.actions .like').forEach(button => {
     button.addEventListener('click', like);
   });
+  document.querySelectorAll('.actions .dislike').forEach(button => {
+    button.addEventListener('click', dislike);
+  });
 });
+  
 
 function like(event) {
   const actionElement = event.target.closest('.action');
@@ -14,8 +18,29 @@ function like(event) {
     method: 'POST',
     headers,
     body: JSON.stringify({ like: { post_id: actionElement.dataset.postId } })
-  })  
+  })
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(json => hendleLikeFeatureCallback({ ...json, actionElement }))
     .catch(error => console.log('parsing failed: ', error));
+}
+
+function dislike(event) {
+  const actionElement = event.target.closest('.action');
+
+  fetch(`/likes/${actionElement.dataset.likeId}`, { method: 'DELETE', headers })
+    .then(response => response.json())
+    .then(json => hendleLikeFeatureCallback({ ...json, actionElement }))
+    .catch(error => console.log('parsing failed: ', error));
+}
+
+
+function hendleLikeFeatureCallback({id, successful, actionElement}) {
+  if (successful) {
+    actionElement.dataset.likeId = id;
+
+    actionElement.querySelectorAll('.like, .dislike').forEach(div => {
+      div.classList.toggle('hidden');
+    })
+  }
+  
 }
