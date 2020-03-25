@@ -53,3 +53,5 @@ group :development do
 end
 
 gem "active_storage_validations", "~> 0.8.7"
+
+gem "redis", "~> 4.1"
